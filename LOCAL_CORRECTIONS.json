@@ -1,0 +1,350 @@
+{
+  "revision": "issue-2-corrected-2026-09-30",
+  "upstream_repository": "https://github.com/roozbeh-mohit/miniF2F_v2",
+  "upstream_commit": "905eca84f37cf38a49ec54f0f03e7bf99b510168",
+  "issue_url": "https://github.com/roozbeh-mohit/miniF2F_v2/issues/2",
+  "upstream_file_sha256": {
+    "datasets/miniF2F_v2s.json": "60f037b6ce4bc7ad6af7a6eb84557d15368c8c96ae5b7a1a1cb0706826be1a19",
+    "datasets/miniF2F_v2s.jsonl": "c22f9f7fbd72fda095c0284a891d97bd97b3e48ed413ac518de7fca49d5fcaa5",
+    "datasets/miniF2F_v2c.json": "01a7a6e75f7ae0463f22f6e4af62c0320fa803068bf18da25a8468b7231c1646",
+    "datasets/miniF2F_v2c.jsonl": "52ffe8851f16ce80c02b1db97788dd7e8d92543b8d39ae85b036e35da7e451d9"
+  },
+  "cases": {
+    "mathd_algebra_478": {
+      "issue": 2,
+      "reason": "Remove the spurious scale u and use the stated numerical area and height.",
+      "variants": {
+        "s": {
+          "upstream_formal_statement": "theorem mathd_algebra_478 (b h v u : ℝ) (h₁ : v = 1 / 3 * (b * h))\n  (h₂ : b = 30 * u) (h₃ : h = 13 / 2 * u) : v = 65 * u := by",
+          "formal_statement": "theorem mathd_algebra_478 (b h v : ℝ) (h₁ : v = (1/3) * (b*h))\n  (h₂ : b = 30) (h₃ : h = 13/2) : v = 65 := by"
+        },
+        "c": {
+          "upstream_formal_statement": "theorem mathd_algebra_478 (b h v u : ℝ) (h₁ : v = 1 / 3 * (b * h))\n  (h₂ : b = 30 * u) (h₃ : h = 13 / 2 * u) : v = 65 * u := by",
+          "formal_statement": "theorem mathd_algebra_478 (b h v : ℝ) (h₁ : v = (1/3) * (b*h))\n  (h₂ : b = 30) (h₃ : h = 13/2) : v = 65 := by"
+        }
+      }
+    },
+    "mathd_algebra_398": {
+      "issue": 2,
+      "reason": "Unit sizes must be positive; positivity of the other units follows from the ratios.",
+      "variants": {
+        "s": {
+          "upstream_formal_statement": "theorem mathd_algebra_398 (a b c x : ℝ) (h₁ : 9 * b = 20 * c)\n  (h₂ : 7 * a = 4 * b) (h₃ : x * a = 80 * c) : x = 63 := by",
+          "formal_statement": "theorem mathd_algebra_398 (a b c x : ℝ) (ha : 0 < a) (h₁ : 9 * b = 20 * c)\n  (h₂ : 7 * a = 4 * b) (h₃ : x * a = 80 * c) : x = 63 := by"
+        },
+        "c": {
+          "upstream_formal_statement": "theorem mathd_algebra_398 (a b c x : ℝ) (h₁ : 9 * b = 20 * c)\n  (h₂ : 7 * a = 4 * b) (h₃ : x * a = 80 * c) : x = 63 := by",
+          "formal_statement": "theorem mathd_algebra_398 (a b c x : ℝ) (ha : 0 < a) (h₁ : 9 * b = 20 * c)\n  (h₂ : 7 * a = 4 * b) (h₃ : x * a = 80 * c) : x = 63 := by"
+        }
+      }
+    },
+    "numbertheory_notequiv2i2jasqbsqdiv8": {
+      "issue": 2,
+      "reason": "Negate the universally quantified equivalence, not one side or each individual instance.",
+      "variants": {
+        "s": {
+          "upstream_formal_statement": "theorem numbertheory_notequiv2i2jasqbsqdiv8\n  (a b : ℤ):\n  ¬ (Even a ∧ Even b) ↔ 8 ∣ a ^ 2 + b ^ 2 := by",
+          "formal_statement": "theorem numbertheory_notequiv2i2jasqbsqdiv8 : ¬ (∀ a b : ℤ, (Even a ∧ Even b) ↔ 8 ∣ a^2 + b^2) := by"
+        },
+        "c": {
+          "upstream_formal_statement": "theorem numbertheory_notequiv2i2jasqbsqdiv8\n  (a b : ℤ):\n  ¬ (Even a ∧ Even b) ↔ 8 ∣ a ^ 2 + b ^ 2 := by",
+          "formal_statement": "theorem numbertheory_notequiv2i2jasqbsqdiv8 : ¬ (∀ a b : ℤ, (Even a ∧ Even b) ↔ 8 ∣ a^2 + b^2) := by"
+        }
+      }
+    },
+    "imo_1959_p1": {
+      "issue": 2,
+      "reason": "Irreducibility of a fraction means coprimality, not irreducibility of a natural quotient.",
+      "variants": {
+        "s": {
+          "upstream_formal_statement": "theorem imo_1959_p1 : ∀ n : ℕ, Irreducible ((21 * n + 4) / (14 * n + 3)) := by ",
+          "formal_statement": "theorem imo_1959_p1 : ∀ n : ℕ, Nat.Coprime (21*n+4) (14*n+3) := by"
+        },
+        "c": {
+          "upstream_formal_statement": "theorem imo_1959_p1 : ∀ n : ℕ, Irreducible ((21 * n + 4) / (14 * n + 3)) := by ",
+          "formal_statement": "theorem imo_1959_p1 : ∀ n : ℕ, Nat.Coprime (21*n+4) (14*n+3) := by"
+        }
+      }
+    },
+    "imo_1982_p1": {
+      "issue": 2,
+      "reason": "Use addition equations so negative differences cannot be truncated to zero.",
+      "variants": {
+        "s": {
+          "upstream_formal_statement": "theorem imo_1982_p1 (f : ℕ → ℕ)\n  (h₀ : ∀ m n, 0 < m ∧ 0 < n → f (m + n) - f m - f n = 0 ∨ f (m + n) - f m - f n = 1)\n  (h₁ : f 2 = 0) (h₂ : 0 < f 3) (h₃ : f 9999 = 3333) : f 1982 = 660 := by",
+          "formal_statement": "theorem imo_1982_p1 (f : ℕ → ℕ)\n  (h₀ : ∀ m n, 0 < m ∧ 0 < n → f (m+n) = f m + f n ∨ f (m+n) = f m + f n + 1)\n  (h₁ : f 2 = 0) (h₂ : 0 < f 3) (h₃ : f 9999 = 3333) : f 1982 = 660 := by"
+        },
+        "c": {
+          "upstream_formal_statement": "noncomputable abbrev imo_1982_p1_solution : ℕ := sorry\n\ntheorem imo_1982_p1 (f : ℕ → ℕ)\n  (h₀ : ∀ m n, 0 < m ∧ 0 < n → f (m + n) - f m - f n = 0 ∨ f (m + n) - f m - f n = 1)\n  (h₁ : f 2 = 0) (h₂ : 0 < f 3) (h₃ : f 9999 = 3333) : f 1982 = imo_1982_p1_solution := by",
+          "formal_statement": "noncomputable abbrev imo_1982_p1_solution : ℕ := sorry\n\ntheorem imo_1982_p1 (f : ℕ → ℕ)\n  (h₀ : ∀ m n, 0 < m ∧ 0 < n → f (m+n) = f m + f n ∨ f (m+n) = f m + f n + 1)\n  (h₁ : f 2 = 0) (h₂ : 0 < f 3) (h₃ : f 9999 = 3333) : f 1982 = imo_1982_p1_solution := by"
+        }
+      }
+    },
+    "mathd_algebra_184": {
+      "issue": 2,
+      "reason": "Fix the second sequence and restrict its recurrence to the first two transitions.",
+      "variants": {
+        "s": {
+          "upstream_formal_statement": "theorem mathd_algebra_184\n  (a b : NNReal)\n  (h₀ : 0 < a ∧ 0 < b)\n  (S₁ S₂ : Fin 3 → NNReal)\n  (h₁ : S₁ 0 = 6 ∧ S₁ 1 = a ∧ S₁ 2 = b)\n  (h₂ : S₂ 0 = 1 / b ∧ S₁ 1 = a ∧ S₁ 2 = 54)\n  (h₃ : ∃! r, r ≠ 0 ∧ r ≠ 1 ∧ ∀ n, n < 2 → S₁ n * r = S₁ (n + 1))\n  (h₄ : ∃! r, r ≠ 0 ∧ r ≠ 1 ∧ ∀ n, S₂ n * r = S₂ (n + 1)) :\n  a = 3 * NNReal.sqrt 2 := by",
+          "formal_statement": "theorem mathd_algebra_184\n  (a b : NNReal)\n  (h₀ : 0 < a ∧ 0 < b)\n  (S₁ S₂ : Fin 3 → NNReal)\n  (h₁ : S₁ 0 = 6 ∧ S₁ 1 = a ∧ S₁ 2 = b)\n  (h₂ : S₂ 0 = 1 / b ∧ S₂ 1 = a ∧ S₂ 2 = 54)\n  (h₃ : ∃! r, r ≠ 0 ∧ r ≠ 1 ∧ ∀ n, n < 2 → S₁ n * r = S₁ (n + 1))\n  (h₄ : ∃! r, r ≠ 0 ∧ r ≠ 1 ∧ ∀ n, n < 2 → S₂ n * r = S₂ (n + 1)) :\n  a = 3 * NNReal.sqrt 2 := by"
+        },
+        "c": {
+          "upstream_formal_statement": "theorem mathd_algebra_184\n  (a b : NNReal)\n  (h₀ : 0 < a ∧ 0 < b)\n  (S₁ S₂ : Fin 3 → NNReal)\n  (h₁ : S₁ 0 = 6 ∧ S₁ 1 = a ∧ S₁ 2 = b)\n  (h₂ : S₂ 0 = 1 / b ∧ S₁ 1 = a ∧ S₁ 2 = 54)\n  (h₃ : ∃! r, r ≠ 0 ∧ r ≠ 1 ∧ ∀ n, n < 2 → S₁ n * r = S₁ (n + 1))\n  (h₄ : ∃! r, r ≠ 0 ∧ r ≠ 1 ∧ ∀ n, S₂ n * r = S₂ (n + 1)) :\n  a = 3 * NNReal.sqrt 2 := by",
+          "formal_statement": "theorem mathd_algebra_184\n  (a b : NNReal)\n  (h₀ : 0 < a ∧ 0 < b)\n  (S₁ S₂ : Fin 3 → NNReal)\n  (h₁ : S₁ 0 = 6 ∧ S₁ 1 = a ∧ S₁ 2 = b)\n  (h₂ : S₂ 0 = 1 / b ∧ S₂ 1 = a ∧ S₂ 2 = 54)\n  (h₃ : ∃! r, r ≠ 0 ∧ r ≠ 1 ∧ ∀ n, n < 2 → S₁ n * r = S₁ (n + 1))\n  (h₄ : ∃! r, r ≠ 0 ∧ r ≠ 1 ∧ ∀ n, n < 2 → S₂ n * r = S₂ (n + 1)) :\n  a = 3 * NNReal.sqrt 2 := by"
+        }
+      }
+    },
+    "mathd_algebra_275": {
+      "issue": 2,
+      "reason": "Use the intended real fourth root instead of natural division.",
+      "variants": {
+        "s": {
+          "upstream_formal_statement": "theorem mathd_algebra_275 (x : ℝ) (h : ((11 : ℝ) ^ (1 / 4)) ^ (3 * x - 3) = 1 / 5) :\n  ((11 : ℝ) ^ (1 / 4)) ^ (6 * x + 2) = 121 / 25 := by",
+          "formal_statement": "theorem mathd_algebra_275 (x : ℝ) (h : ((11 : ℝ) ^ (1 / 4 : ℝ)) ^ (3 * x - 3) = 1 / 5) :\n  ((11 : ℝ) ^ (1 / 4 : ℝ)) ^ (6 * x + 2) = 121 / 25 := by"
+        },
+        "c": {
+          "upstream_formal_statement": "theorem mathd_algebra_275 (x : ℝ) (h : ((11 : ℝ) ^ (1 / 4)) ^ (3 * x - 3) = 1 / 5) :\n  ((11 : ℝ) ^ (1 / 4)) ^ (6 * x + 2) = 121 / 25 := by",
+          "formal_statement": "theorem mathd_algebra_275 (x : ℝ) (h : ((11 : ℝ) ^ (1 / 4 : ℝ)) ^ (3 * x - 3) = 1 / 5) :\n  ((11 : ℝ) ^ (1 / 4 : ℝ)) ^ (6 * x + 2) = 121 / 25 := by"
+        }
+      }
+    },
+    "mathd_numbertheory_618": {
+      "issue": 2,
+      "reason": "Exclude zero from the set of candidate positive integers.",
+      "variants": {
+        "s": {
+          "upstream_formal_statement": "theorem mathd_numbertheory_618\n  (p : ℕ → ℕ)\n  (S : Set ℕ)\n  (h₀ : ∀ x, p x = x ^ 2 - x + 41)\n  (h₁ : S = {n | 1 < Nat.gcd (p n) (p (n + 1))}) :\n  IsLeast S 41 := by",
+          "formal_statement": "theorem mathd_numbertheory_618\n  (p : ℕ → ℕ)\n  (S : Set ℕ)\n  (h₀ : ∀ x, p x = x ^ 2 - x + 41)\n  (h₁ : S = {n | 0 < n ∧ 1 < Nat.gcd (p n) (p (n + 1))}) :\n  IsLeast S 41 := by"
+        },
+        "c": {
+          "upstream_formal_statement": "theorem mathd_numbertheory_618\n  (p : ℕ → ℕ)\n  (S : Set ℕ)\n  (h₀ : ∀ x, p x = x ^ 2 - x + 41)\n  (h₁ : S = {n | 1 < Nat.gcd (p n) (p (n + 1))}) :\n  IsLeast S 41 := by",
+          "formal_statement": "theorem mathd_numbertheory_618\n  (p : ℕ → ℕ)\n  (S : Set ℕ)\n  (h₀ : ∀ x, p x = x ^ 2 - x + 41)\n  (h₁ : S = {n | 0 < n ∧ 1 < Nat.gcd (p n) (p (n + 1))}) :\n  IsLeast S 41 := by"
+        }
+      }
+    },
+    "algebra_ineq_nto1onlt2m1on": {
+      "issue": 2,
+      "reason": "Allow equality at n=1.",
+      "variants": {
+        "s": {
+          "upstream_formal_statement": "theorem algebra_ineq_nto1onlt2m1on\n  (n : ℕ)\n  (hn : 0 < n) :\n  (n : ℝ) ^ (1 / n:ℝ) < 2 - 1 / n := by",
+          "formal_statement": "theorem algebra_ineq_nto1onlt2m1on\n  (n : ℕ)\n  (hn : 0 < n) :\n  (n : ℝ) ^ (1 / n:ℝ) ≤ 2 - 1 / n := by"
+        },
+        "c": {
+          "upstream_formal_statement": "theorem algebra_ineq_nto1onlt2m1on\n  (n : ℕ)\n  (hn : 0 < n) :\n  (n : ℝ) ^ (1 / n:ℝ) < 2 - 1 / n := by",
+          "formal_statement": "theorem algebra_ineq_nto1onlt2m1on\n  (n : ℕ)\n  (hn : 0 < n) :\n  (n : ℝ) ^ (1 / n:ℝ) ≤ 2 - 1 / n := by"
+        }
+      }
+    },
+    "amc12_2000_p1": {
+      "issue": 2,
+      "reason": "Require all three numbers to be pairwise distinct.",
+      "variants": {
+        "s": {
+          "upstream_formal_statement": "theorem amc12_2000_p1:   IsGreatest {z : ℕ | ∃ I M O : ℕ, I > 0 ∧ M > 0 ∧O > 0 ∧ I ≠ M ∧ M ≠ O ∧ I * M * O = 2001 ∧ I + M + O = z} 671 := by",
+          "formal_statement": "theorem amc12_2000_p1:   IsGreatest {z : ℕ | ∃ I M O : ℕ, I > 0 ∧ M > 0 ∧O > 0 ∧ I ≠ M ∧ M ≠ O ∧ I ≠ O ∧ I * M * O = 2001 ∧ I + M + O = z} 671 := by"
+        },
+        "c": {
+          "upstream_formal_statement": "theorem amc12_2000_p1\n  (x : ℕ)\n  (hx : IsGreatest {z : ℕ | ∃ I M O : ℕ, I > 0 ∧ M > 0 ∧O > 0 ∧ I ≠ M ∧ M ≠ O ∧ I * M * O = 2001 ∧ I + M + O = z} x):\n  x = 23 ∨ x = 55 ∨ x = 99 ∨ x = 111 ∨ x = 671 := by",
+          "formal_statement": "theorem amc12_2000_p1\n  (x : ℕ)\n  (hx : IsGreatest {z : ℕ | ∃ I M O : ℕ, I > 0 ∧ M > 0 ∧O > 0 ∧ I ≠ M ∧ M ≠ O ∧ I ≠ O ∧ I * M * O = 2001 ∧ I + M + O = z} x):\n  x = 23 ∨ x = 55 ∨ x = 99 ∨ x = 111 ∨ x = 671 := by"
+        }
+      }
+    },
+    "amc12a_2020_p15": {
+      "issue": 2,
+      "reason": "Measure distance rather than squared distance.",
+      "variants": {
+        "s": {
+          "upstream_formal_statement": "theorem amc12a_2020_p15\n  (A B : Set ℂ)\n  (D : Set ℝ)\n  (hA : A = {x:ℂ | x ^ 3 - 8 = 0})\n  (hB : B = {x:ℂ | x ^ 3 - 8 * x ^ 2 - 8 * x + 64 = 0})\n  (hD : D = {d:ℝ | ∃ a b:ℂ, a ∈ A ∧ b ∈ B ∧ d = Complex.normSq (a - b)}):\n  IsGreatest D ((2:ℝ) * Real.sqrt 21) := by",
+          "formal_statement": "theorem amc12a_2020_p15\n  (A B : Set ℂ)\n  (D : Set ℝ)\n  (hA : A = {x:ℂ | x ^ 3 - 8 = 0})\n  (hB : B = {x:ℂ | x ^ 3 - 8 * x ^ 2 - 8 * x + 64 = 0})\n  (hD : D = {d:ℝ | ∃ a b:ℂ, a ∈ A ∧ b ∈ B ∧ d = ‖a - b‖}):\n  IsGreatest D ((2:ℝ) * Real.sqrt 21) := by"
+        },
+        "c": {
+          "upstream_formal_statement": "theorem amc12a_2020_p15\n  (A B : Set ℂ)\n  (D : Set ℝ)\n  (hA : A = {x:ℂ | x ^ 3 - 8 = 0})\n  (hB : B = {x:ℂ | x ^ 3 - 8 * x ^ 2 - 8 * x + 64 = 0})\n  (hD : D = {d:ℝ | ∃ a b:ℂ, a ∈ A ∧ b ∈ B ∧ d = Complex.normSq (a - b)})\n  (X : ℝ)\n  (hX : IsGreatest D X):\n  X = ((2:ℝ) * Real.sqrt 3) ∨ X = 6 ∨ X = 9 ∨ X = ((2:ℝ) * Real.sqrt 21) ∨ X = ((9:ℝ) + Real.sqrt 3) := by",
+          "formal_statement": "theorem amc12a_2020_p15\n  (A B : Set ℂ)\n  (D : Set ℝ)\n  (hA : A = {x:ℂ | x ^ 3 - 8 = 0})\n  (hB : B = {x:ℂ | x ^ 3 - 8 * x ^ 2 - 8 * x + 64 = 0})\n  (hD : D = {d:ℝ | ∃ a b:ℂ, a ∈ A ∧ b ∈ B ∧ d = ‖a - b‖})\n  (X : ℝ)\n  (hX : IsGreatest D X):\n  X = ((2:ℝ) * Real.sqrt 3) ∨ X = 6 ∨ X = 9 ∨ X = ((2:ℝ) * Real.sqrt 21) ∨ X = ((9:ℝ) + Real.sqrt 3) := by"
+        }
+      }
+    },
+    "mathd_algebra_142": {
+      "issue": 2,
+      "reason": "Require both specified points to lie on the line.",
+      "variants": {
+        "s": {
+          "upstream_formal_statement": "theorem mathd_algebra_142\n  (m b : ℝ)\n  (L : Set (EuclideanSpace ℝ (Fin 2)))\n  (hL : L = {x | x 1 = m * x 0 + b})\n  (B C : EuclideanSpace ℝ (Fin 2))\n  (hB : B = ![7, -1])\n  (hC : C = ![-1, 7]) :\n  m + b = 5 := by",
+          "formal_statement": "theorem mathd_algebra_142\n  (m b : ℝ)\n  (L : Set (EuclideanSpace ℝ (Fin 2)))\n  (hL : L = {x | x 1 = m * x 0 + b})\n  (B C : EuclideanSpace ℝ (Fin 2))\n  (hB : B = ![7, -1])\n  (hC : C = ![-1, 7])\n  (hBL : B ∈ L) (hCL : C ∈ L) :\n  m + b = 5 := by"
+        },
+        "c": {
+          "upstream_formal_statement": "theorem mathd_algebra_142\n  (m b : ℝ)\n  (L : Set (EuclideanSpace ℝ (Fin 2)))\n  (hL : L = {x | x 1 = m * x 0 + b})\n  (B C : EuclideanSpace ℝ (Fin 2))\n  (hB : B = ![7, -1])\n  (hC : C = ![-1, 7]) :\n  m + b = 5 := by",
+          "formal_statement": "theorem mathd_algebra_142\n  (m b : ℝ)\n  (L : Set (EuclideanSpace ℝ (Fin 2)))\n  (hL : L = {x | x 1 = m * x 0 + b})\n  (B C : EuclideanSpace ℝ (Fin 2))\n  (hB : B = ![7, -1])\n  (hC : C = ![-1, 7])\n  (hBL : B ∈ L) (hCL : C ∈ L) :\n  m + b = 5 := by"
+        }
+      }
+    },
+    "mathd_numbertheory_780": {
+      "issue": 2,
+      "reason": "Encode invertibility by coprimality and the inverse equation by modular multiplication; no unbound existential variable.",
+      "variants": {
+        "s": {
+          "upstream_formal_statement": "theorem mathd_numbertheory_780\n  (m : ℕ)\n  (h₀ : 10 ≤ m ∧ m ≤ 99)\n  (h₂ : ∃ (x:ZMod m), (x = 6⁻¹))\n  (h₃: x ≡ (6)^2 [MOD m]) :\n  m = 43 := by",
+          "formal_statement": "theorem mathd_numbertheory_780 (m : ℕ) (h₀ : 10 ≤ m ∧ m ≤ 99)\n  (h₁ : Nat.Coprime 6 m) (h₂ : Nat.ModEq m (6 * 6^2) 1) : m = 43 := by"
+        },
+        "c": {
+          "upstream_formal_statement": "theorem mathd_numbertheory_780\n  (m : ℕ)\n  (h₀ : 10 ≤ m ∧ m ≤ 99)\n  (h₂ : ∃ (x:ZMod m), (x = 6⁻¹))\n  (h₃: x ≡ (6)^2 [MOD m]) :\n  m = 43 := by",
+          "formal_statement": "theorem mathd_numbertheory_780 (m : ℕ) (h₀ : 10 ≤ m ∧ m ≤ 99)\n  (h₁ : Nat.Coprime 6 m) (h₂ : Nat.ModEq m (6 * 6^2) 1) : m = 43 := by"
+        }
+      }
+    },
+    "imo_2006_p3": {
+      "issue": 2,
+      "reason": "The bound must hold for every triple inside the set of candidate constants.",
+      "variants": {
+        "s": {
+          "upstream_formal_statement": "theorem imo_2006_p3\n  (a b c : ℝ)\n  (S : Set ℝ)\n  (hS : S = {M | a * b * (a ^ 2 - b ^ 2) + b * c * (b ^ 2 - c ^ 2) + c * a * (c ^ 2 - a ^ 2) ≤ M * (a ^ 2 + b ^ 2 + c ^ 2) ^ 2}) :\n  IsLeast S (9 * Real.sqrt 2 / 32) := by",
+          "formal_statement": "theorem imo_2006_p3\n  (S : Set ℝ)\n  (hS : S = {M | ∀ a b c : ℝ, a * b * (a ^ 2 - b ^ 2) + b * c * (b ^ 2 - c ^ 2) + c * a * (c ^ 2 - a ^ 2) ≤ M * (a ^ 2 + b ^ 2 + c ^ 2) ^ 2}) :\n  IsLeast S (9 * Real.sqrt 2 / 32) := by"
+        },
+        "c": {
+          "upstream_formal_statement": "abbrev imo_2006_p3_solution : ℝ := sorry\n\ntheorem imo_2006_p3\n  (a b c : ℝ)\n  (S : Set ℝ)\n  (hS : S = {M | a * b * (a ^ 2 - b ^ 2) + b * c * (b ^ 2 - c ^ 2) + c * a * (c ^ 2 - a ^ 2) ≤ M * (a ^ 2 + b ^ 2 + c ^ 2) ^ 2}) :\n  IsLeast S imo_2006_p3_solution := by",
+          "formal_statement": "abbrev imo_2006_p3_solution : ℝ := sorry\n\ntheorem imo_2006_p3\n  (S : Set ℝ)\n  (hS : S = {M | ∀ a b c : ℝ, a * b * (a ^ 2 - b ^ 2) + b * c * (b ^ 2 - c ^ 2) + c * a * (c ^ 2 - a ^ 2) ≤ M * (a ^ 2 + b ^ 2 + c ^ 2) ^ 2}) :\n  IsLeast S imo_2006_p3_solution := by"
+        }
+      }
+    },
+    "mathd_algebra_101": {
+      "issue": 2,
+      "reason": "Characterize the entire solution set by an equivalence.",
+      "variants": {
+        "s": {
+          "upstream_formal_statement": "theorem mathd_algebra_101 (x : ℝ) (h₀ : x ^ 2 - 5 * x - 4 ≤ 10) : x ∈ Set.Icc (-2) 7 := by",
+          "formal_statement": "theorem mathd_algebra_101 (x : ℝ) : x^2 - 5*x - 4 ≤ 10 ↔ x ∈ Set.Icc (-2) 7 := by"
+        },
+        "c": {
+          "upstream_formal_statement": "theorem mathd_algebra_101 (x : ℝ) (h₀ : x ^ 2 - 5 * x - 4 ≤ 10) : x ∈ Set.Icc (-2) 7 := by",
+          "formal_statement": "theorem mathd_algebra_101 (x : ℝ) : x^2 - 5*x - 4 ≤ 10 ↔ x ∈ Set.Icc (-2) 7 := by"
+        }
+      }
+    },
+    "mathd_numbertheory_200": {
+      "issue": 2,
+      "reason": "Encode the one-based circular step count directly.",
+      "variants": {
+        "s": {
+          "upstream_formal_statement": "theorem mathd_numbertheory_200\n  (x p : ℕ)\n  (f : ℕ → ℝ)\n  (h₀ : Function.Periodic f p)\n  (h₁ : f 11 = f 0)\n  (h₂: f 139 = f x) :\n  x = 7 := by",
+          "formal_statement": "theorem mathd_numbertheory_200 : ((139 - 1) % 11 + 1 : ℕ) = 7 := by"
+        },
+        "c": {
+          "upstream_formal_statement": "theorem mathd_numbertheory_200\n  (x p : ℕ)\n  (f : ℕ → ℝ)\n  (h₀ : Function.Periodic f p)\n  (h₁ : f 11 = f 0)\n  (h₂: f 139 = f x) :\n  x = 7 := by",
+          "formal_statement": "theorem mathd_numbertheory_200 : ((139 - 1) % 11 + 1 : ℕ) = 7 := by"
+        }
+      }
+    },
+    "amc12b_2002_p6": {
+      "issue": 2,
+      "reason": "Specify two distinct roots, excluding a=b=-1/2.",
+      "variants": {
+        "s": {
+          "upstream_formal_statement": "theorem amc12b_2002_p6 \n  (a b : ℝ)\n  (f : ℝ → ℝ)\n  (h₀ : a ≠ 0 ∧ b ≠ 0)\n  (h₁: f = fun x => x ^ 2 + a * x + b)\n  (h₂: f a = 0)\n  (h₃ : f b = 0) : \n  a = 1 ∧ b = -2 := by",
+          "formal_statement": "theorem amc12b_2002_p6 \n  (a b : ℝ)\n  (f : ℝ → ℝ)\n  (h₀ : a ≠ 0 ∧ b ≠ 0)\n  (h₁: f = fun x => x ^ 2 + a * x + b)\n  (hdistinct : a ≠ b)\n  (h₂: f a = 0)\n  (h₃ : f b = 0) : \n  a = 1 ∧ b = -2 := by"
+        },
+        "c": {
+          "upstream_formal_statement": "theorem amc12b_2002_p6\n  (a b : ℝ)\n  (f : ℝ → ℝ)\n  (h₀ : a ≠ 0 ∧ b ≠ 0)\n  (h₁: f = fun x => x ^ 2 + a * x + b)\n  (h₂: f a = 0)\n  (h₃ : f b = 0) :\n  (a, b) = (-2, 1) ∨ (a, b) = (-1, 2) ∨ (a, b) = (1, -2) ∨ (a, b) = (2, -1) ∨ (a, b) = (4, 4) := by",
+          "formal_statement": "theorem amc12b_2002_p6\n  (a b : ℝ)\n  (f : ℝ → ℝ)\n  (h₀ : a ≠ 0 ∧ b ≠ 0)\n  (h₁: f = fun x => x ^ 2 + a * x + b)\n  (hdistinct : a ≠ b)\n  (h₂: f a = 0)\n  (h₃ : f b = 0) :\n  (a, b) = (-2, 1) ∨ (a, b) = (-1, 2) ∨ (a, b) = (1, -2) ∨ (a, b) = (2, -1) ∨ (a, b) = (4, 4) := by"
+        }
+      }
+    },
+    "mathd_algebra_393": {
+      "issue": 2,
+      "reason": "Use the functional inverse, not the pointwise reciprocal.",
+      "variants": {
+        "s": {
+          "upstream_formal_statement": "theorem mathd_algebra_393 \n  (f : ℝ → ℝ)\n  (h₀: f = fun x ↦ 4 * x ^ 3 + 1) :\n  f⁻¹ 33 = 2 := by",
+          "formal_statement": "theorem mathd_algebra_393 \n  (f : ℝ → ℝ)\n  (h₀: f = fun x ↦ 4 * x ^ 3 + 1) :\n  Function.invFun f 33 = 2 := by"
+        },
+        "c": {
+          "upstream_formal_statement": "theorem mathd_algebra_393 \n  (f : ℝ → ℝ)\n  (h₀: f = fun x ↦ 4 * x ^ 3 + 1) :\n  f⁻¹ 33 = 2 := by",
+          "formal_statement": "theorem mathd_algebra_393 \n  (f : ℝ → ℝ)\n  (h₀: f = fun x ↦ 4 * x ^ 3 + 1) :\n  Function.invFun f 33 = 2 := by"
+        }
+      }
+    },
+    "mathd_algebra_282": {
+      "issue": 2,
+      "reason": "Use the negative real cube root of 8, not a natural exponent on positive 8.",
+      "variants": {
+        "s": {
+          "upstream_formal_statement": "theorem mathd_algebra_282 (f : ℝ → ℝ) (h₀ : ∀ x : ℝ, ¬ (Irrational x) → f x = abs (Int.floor x))\n  (h₁ : ∀ x, Irrational x → f x = (Int.ceil x) ^ 2) :\n  f (8 ^ (1 / 3)) + f (-Real.pi) + f (Real.sqrt 50) + f (9 / 2) = 79 := by",
+          "formal_statement": "theorem mathd_algebra_282 (f : ℝ → ℝ) (h₀ : ∀ x : ℝ, ¬ (Irrational x) → f x = abs (Int.floor x))\n  (h₁ : ∀ x, Irrational x → f x = (Int.ceil x) ^ 2) :\n  f (-((8 : ℝ) ^ ((1 : ℝ) / 3))) + f (-Real.pi) + f (Real.sqrt 50) + f (9 / 2) = 79 := by"
+        },
+        "c": {
+          "upstream_formal_statement": "theorem mathd_algebra_282 (f : ℝ → ℝ) (h₀ : ∀ x : ℝ, ¬ (Irrational x) → f x = abs (Int.floor x))\n  (h₁ : ∀ x, Irrational x → f x = (Int.ceil x) ^ 2) :\n  f (8 ^ (1 / 3)) + f (-Real.pi) + f (Real.sqrt 50) + f (9 / 2) = 79 := by",
+          "formal_statement": "theorem mathd_algebra_282 (f : ℝ → ℝ) (h₀ : ∀ x : ℝ, ¬ (Irrational x) → f x = abs (Int.floor x))\n  (h₁ : ∀ x, Irrational x → f x = (Int.ceil x) ^ 2) :\n  f (-((8 : ℝ) ^ ((1 : ℝ) / 3))) + f (-Real.pi) + f (Real.sqrt 50) + f (9 / 2) = 79 := by"
+        }
+      }
+    },
+    "imo_1967_p3": {
+      "issue": null,
+      "reason": "Place the subtraction inside each product factor (additional local correction, not issue #2).",
+      "variants": {
+        "s": {
+          "upstream_formal_statement": "theorem imo_1967_p3 (k m n : ℕ) (c : ℕ → ℕ) (h₀ : 0 < k ∧ 0 < m ∧ 0 < n)\n  (h₁ : ∀ s, c s = s * (s + 1)) (h₂ : Nat.Prime (k + m + 1)) (h₃ : n + 1 < k + m + 1) :\n  (∏ i in Finset.Icc 1 n, c i) ∣ ∏ i in Finset.Icc 1 n, c (m + i) - c k := by",
+          "formal_statement": "theorem imo_1967_p3 (k m n : ℕ) (c : ℕ → ℕ) (h₀ : 0 < k ∧ 0 < m ∧ 0 < n)\n  (h₁ : ∀ s, c s = s * (s + 1)) (h₂ : Nat.Prime (k + m + 1)) (h₃ : n + 1 < k + m + 1) :\n  (∏ i in Finset.Icc 1 n, c i) ∣ ∏ i in Finset.Icc 1 n, (c (m + i) - c k) := by"
+        },
+        "c": {
+          "upstream_formal_statement": "theorem imo_1967_p3 (k m n : ℕ) (c : ℕ → ℕ) (h₀ : 0 < k ∧ 0 < m ∧ 0 < n)\n  (h₁ : ∀ s, c s = s * (s + 1)) (h₂ : Nat.Prime (k + m + 1)) (h₃ : n + 1 < k + m + 1) :\n  (∏ i in Finset.Icc 1 n, c i) ∣ ∏ i in Finset.Icc 1 n, c (m + i) - c k := by",
+          "formal_statement": "theorem imo_1967_p3 (k m n : ℕ) (c : ℕ → ℕ) (h₀ : 0 < k ∧ 0 < m ∧ 0 < n)\n  (h₁ : ∀ s, c s = s * (s + 1)) (h₂ : Nat.Prime (k + m + 1)) (h₃ : n + 1 < k + m + 1) :\n  (∏ i in Finset.Icc 1 n, c i) ∣ ∏ i in Finset.Icc 1 n, (c (m + i) - c k) := by"
+        }
+      }
+    },
+    "amc12a_2003_p25": {
+      "issue": 2,
+      "reason": "Use the nonnegative radicand as the domain, and take the image over that domain; use Finset membership explicitly in v2s.",
+      "variants": {
+        "s": {
+          "upstream_formal_statement": "theorem amc12a_2003_p25\n  (f : ℝ → ℝ → ℝ → ℝ)\n  (S : Finset ℝ)\n  (h₀ : f = fun a b x ↦ Real.sqrt (a * x ^ 2 + b * x))\n  (hS : S = {a | ∃ b, 0 < b ∧ Set.range (f a b) = { x | 0 ≤ f x }}):\n  S.card = 2 := by",
+          "formal_statement": "theorem amc12a_2003_p25\n  (f : ℝ → ℝ → ℝ → ℝ)\n  (S : Finset ℝ)\n  (h₀ : f = fun a b x ↦ Real.sqrt (a * x ^ 2 + b * x))\n  (hS : ∀ a : ℝ, a ∈ S ↔ ∃ b : ℝ, 0 < b ∧ (f a b) '' {x : ℝ | 0 ≤ a*x^2+b*x} = {x : ℝ | 0 ≤ a*x^2+b*x}):\n  S.card = 2 := by"
+        },
+        "c": {
+          "upstream_formal_statement": "theorem amc12a_2003_p25\n  (f : ℝ → ℝ → ℝ → ℝ)\n  (S : Set ℝ)\n  (h₀ : f = fun a b x ↦ Real.sqrt (a * x ^ 2 + b * x))\n  (hS : S = {a | ∃ b, 0 < b ∧ Set.range (f a b) = { x | 0 ≤ f x }}):\n  S.ncard = 0 ∨ S.ncard = 1 ∨ S.ncard = 2 ∨ S.ncard = 3 ∨ S.Infinite := by",
+          "formal_statement": "theorem amc12a_2003_p25\n  (f : ℝ → ℝ → ℝ → ℝ)\n  (S : Set ℝ)\n  (h₀ : f = fun a b x ↦ Real.sqrt (a * x ^ 2 + b * x))\n  (hS : S = {a | ∃ b : ℝ, 0 < b ∧ (f a b) '' {x : ℝ | 0 ≤ a*x^2+b*x} = {x : ℝ | 0 ≤ a*x^2+b*x}}):\n  S.ncard = 0 ∨ S.ncard = 1 ∨ S.ncard = 2 ∨ S.ncard = 3 ∨ S.Infinite := by"
+        }
+      }
+    },
+    "aime_1988_p4": {
+      "issue": 2,
+      "reason": "Existentially choose the sequence inside membership and conjoin the bounds with the equation.",
+      "variants": {
+        "s": {
+          "upstream_formal_statement": "theorem aime_1988_p4\n  (S : Set ℕ+)\n  (a : ℕ+ → ℝ)\n  (hS : S = {n | (∀ i:ℕ+, i ∈ Finset.Icc 1 n → abs (a i) < 1) → (∑ k ∈ Finset.Icc 1 n, abs (a k)) = 19 + abs (∑ k ∈ Finset.Icc 1 n, a k)}) :\n  IsLeast S 20 := by",
+          "formal_statement": "theorem aime_1988_p4 (S : Set ℕ+)\n  (hS : S = {n | ∃ a : ℕ+ → ℝ,\n    (∀ i ∈ Finset.Icc 1 n, |a i| < 1) ∧\n    (∑ k ∈ Finset.Icc 1 n, |a k|) = 19 + |∑ k ∈ Finset.Icc 1 n, a k|}) :\n  IsLeast S 20 := by"
+        },
+        "c": {
+          "upstream_formal_statement": "theorem aime_1988_p4\n  (S : Set ℕ+)\n  (a : ℕ+ → ℝ)\n  (hS : S = {n | (∀ i:ℕ+, i ∈ Finset.Icc 1 n → abs (a i) < 1) → (∑ k ∈ Finset.Icc 1 n, abs (a k)) = 19 + abs (∑ k ∈ Finset.Icc 1 n, a k)}) :\n  IsLeast S 20 := by",
+          "formal_statement": "theorem aime_1988_p4 (S : Set ℕ+)\n  (hS : S = {n | ∃ a : ℕ+ → ℝ,\n    (∀ i ∈ Finset.Icc 1 n, |a i| < 1) ∧\n    (∑ k ∈ Finset.Icc 1 n, |a k|) = 19 + |∑ k ∈ Finset.Icc 1 n, a k|}) :\n  IsLeast S 20 := by"
+        }
+      }
+    },
+    "mathd_algebra_437": {
+      "issue": 2,
+      "reason": "Use real cube roots, coerce the integer, and put the endpoints in increasing order.",
+      "variants": {
+        "s": {
+          "upstream_formal_statement": "theorem mathd_algebra_437 (n : ℤ) (h₀ : -(45 ^ (1/3)) ≤ n) (h₁ : n ≤ -(101 ^ (1/3))) : n = -4 := by",
+          "formal_statement": "theorem mathd_algebra_437 (n : ℤ)\n  (h₀ : -((101 : ℝ) ^ ((1 : ℝ)/3)) < (n : ℝ))\n  (h₁ : (n : ℝ) < -((45 : ℝ) ^ ((1 : ℝ)/3))) : n = -4 := by"
+        },
+        "c": {
+          "upstream_formal_statement": "theorem mathd_algebra_437 (n : ℤ) (h₀ : -(45 ^ (1/3)) ≤ n) (h₁ : n ≤ -(101 ^ (1/3))) : n = -4 := by",
+          "formal_statement": "theorem mathd_algebra_437 (n : ℤ)\n  (h₀ : -((101 : ℝ) ^ ((1 : ℝ)/3)) < (n : ℝ))\n  (h₁ : (n : ℝ) < -((45 : ℝ) ^ ((1 : ℝ)/3))) : n = -4 := by"
+        }
+      }
+    },
+    "amc12a_2020_p13": {
+      "issue": 2,
+      "reason": "Use real reciprocals for all four root exponents.",
+      "variants": {
+        "s": {
+          "upstream_formal_statement": "theorem amc12a_2020_p13 (a b c : ℕ) (h₁ : 1 < a ∧ 1 < b ∧ 1 < c)\n  (h₂ : ∀ n:NNReal, n ≠ 1 → (n * (n * n ^ (1 / c)) ^ (1 / b)) ^ (1 / a) = (n ^ 25) ^ (1 / 36)) : b = 3 := by",
+          "formal_statement": "theorem amc12a_2020_p13 (a b c : ℕ) (h₁ : 1 < a ∧ 1 < b ∧ 1 < c)\n  (h₂ : ∀ n:NNReal, n ≠ 1 → (n * (n * n ^ ((1 : ℝ) / c)) ^ ((1 : ℝ) / b)) ^ ((1 : ℝ) / a) = (n ^ 25) ^ ((1 : ℝ) / 36)) : b = 3 := by"
+        },
+        "c": {
+          "upstream_formal_statement": "theorem amc12a_2020_p13 (a b c : ℕ) (h₁ : 1 < a ∧ 1 < b ∧ 1 < c)\n  (h₂ : ∀ n:NNReal, n ≠ 1 → (n * (n * n ^ (1 / c)) ^ (1 / b)) ^ (1 / a) = (n ^ 25) ^ (1 / 36)) :\n  b = 2 ∨ b = 3 ∨ b = 4 ∨ b = 5 ∨ b = 6 := by",
+          "formal_statement": "theorem amc12a_2020_p13 (a b c : ℕ) (h₁ : 1 < a ∧ 1 < b ∧ 1 < c)\n  (h₂ : ∀ n:NNReal, n ≠ 1 → (n * (n * n ^ ((1 : ℝ) / c)) ^ ((1 : ℝ) / b)) ^ ((1 : ℝ) / a) = (n ^ 25) ^ ((1 : ℝ) / 36)) :\n  b = 2 ∨ b = 3 ∨ b = 4 ∨ b = 5 ∨ b = 6 := by"
+        }
+      }
+    }
+  }
+}

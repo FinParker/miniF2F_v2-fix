@@ -1,3 +1,34 @@
+# Local corrected fork
+
+This fork retains the 488 problems and their ordering in both v2s and v2c.
+It repairs all 23 entries reported in [upstream issue #2](https://github.com/roozbeh-mohit/miniF2F_v2/issues/2),
+plus the product-scope error in `imo_1967_p3` (24 distinct problems).
+Both JSON and JSONL contain the corrected statements. The competition variant
+keeps its answer choices and solution placeholders; the simplified variant keeps
+its stated answers. Upstream license and attribution are retained below.
+
+`LOCAL_CORRECTIONS.json` records the pinned upstream commit, source hashes,
+original and corrected statements for each variant, and the reason for every edit.
+Some reports require additional care: the non-equivalence problem negates the
+universal claim; the square-root range is restricted to its actual domain; the
+negative cube-root bounds must also be ordered correctly.
+
+```bash
+python3 repair_dataset.py
+python3 validate_corrections.py --lean-project /path/to/lean-4.9-mathlib-project
+```
+
+The repair command is idempotent and rejects unexpected input. Validation checks
+all four files against the pinned upstream data, checks the 48 changed variant
+statements for elaboration, and verifies the selected proofs in `Regression.lean`.
+Elaboration uses temporary `sorry` bodies and is **not** a proof of all benchmark
+problems. The regression proof file contains no `sorry`. This is a local correction
+set, not an upstream release or a claim that all remaining statements are faithful.
+
+Revision: `issue-2-corrected-2026-09-30`.
+
+---
+
 # miniF2F-Lean v2
 
 We present two modified versions of miniF2F dataset where all the formal and informal statements match each other. The two versions that we introduce are as follows.
